@@ -1,0 +1,40 @@
+##################################################################################################
+#           _____  _                      _        _____ _      _                                #
+#          |  __ \| |                    (_)      |  __ (_)    | |                               #
+#          | |__) | |__   ___   ___ _ __  ___  __ | |__) |  ___| | ____ ___  _____  ___          #
+#          |  ___/| '_ \ / _ \ / _ \ '_ \| \ \/ / |  ___/ |/ __| |/ / _` \ \/ / _ \/ __|         #
+#          | |    | | | | (_) |  __/ | | | |>  <  | |   | | (__|   < (_| |>  <  __/\__ \         #
+#          |_|    |_| |_|\___/ \___|_| |_|_/_/\_\ |_|   |_|\___|_|\_\__,_/_/\_\___||___/         #
+#                                                                                                #
+#          Welcome to the config file for PhoenixPickaxes!                                       #
+#                                                                                                #
+#          Make sure to read the comments above each option to understand what it does.          #
+#                                                                                                #
+#          Happy configuring!                                                                    #
+#                                                                                                #
+##################################################################################################
+
+# How many blocks are required to level up a pickaxe?
+#Default: 100
+blocks-per-level: 100
+
+# Default skin to apply when a player first receives a custom pickaxe
+# This must match a skin ID from skins.yml
+default-skin: "wooden"
+
+# Should we block dropping the pickaxe accidentally?
+# If enabled, players must press "Q" twice to confirm dropping
+prevent-accidental-drop: true
+
+# Title shown when player tries to drop pickaxe (first time)
+drop-title: "&4[!] &cCAREFUL"
+drop-subtitle: "&7Press &cQ again &7to drop your pickaxe"
+
+# Chat message shown when player tries to drop pickaxe (first time)
+drop-chat: "&4[!] &7Press &cQ again &7to drop your pickaxe!"
+
+# Should we enable debug messages in console?
+debug: false
+
+# Don't touch this
+config-version: 1

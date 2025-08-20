@@ -1,0 +1,25 @@
+skins:
+  wooden:
+    display: "madera"
+    material: "WOODEN_PICKAXE"
+    bonus: 0
+
+  stone:
+    display: "piedra"
+    material: "STONE_PICKAXE"
+    bonus: 2
+
+  iron:
+    display: "hierro"
+    material: "IRON_PICKAXE"
+    bonus: 5
+
+  diamond:
+    display: "diamante"
+    material: "DIAMOND_PICKAXE"
+    bonus: 8
+
+  netherite:
+    display: "netherite"
+    material: "NETHERITE_PICKAXE"
+    bonus: 10

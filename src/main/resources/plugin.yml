@@ -1,0 +1,13 @@
+name: PhoenixPickaxes
+version: 1.0.0
+main: com.phoenixpickaxes.PhoenixPickaxes
+api-version: 1.21
+author: Phoenix
+commands:
+  pickaxe:
+    description: Entrega el pico personalizado
+    usage: /pickaxe
+  phoenixpickaxes:
+    description: Comando principal del plugin
+    usage: /phoenixpickaxes <reload|setskin>
+    aliases: [ pp, ppx ]
