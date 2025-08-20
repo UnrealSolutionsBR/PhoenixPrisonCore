@@ -17,33 +17,37 @@ public class BlockBreakListener implements Listener {
         Player player = event.getPlayer();
         ItemStack item = player.getInventory().getItemInMainHand();
 
+        // Validar que es un pico custom
         if (!PickaxeManager.isCustomPickaxe(item)) return;
 
-        // Bloques +1
+        // Bloques +1 (siempre aumenta de a 1)
         int blocks = PickaxeManager.getBlocksBroken(item) + 1;
 
-        // Skin y bonus
+        // Obtener skin y bonus
         String skinId = PickaxeManager.getSkin(item);
         SkinManager.SkinData skinData = SkinManager.getSkin(skinId);
 
-        // XP anterior y nivel actual
+        // XP y nivel actuales
         double xp = PickaxeManager.getXP(item);
         int level = PickaxeManager.getLevel(item);
 
-        // XP ganado
+        // XP base desde blocks.yml
         double baseValue = BlockValueManager.getValue(event.getBlock().getType());
+
+        // Ganancia de XP con bonus de skin
         double gain = baseValue * skinData.bonus();
         xp += gain;
 
         // Revisar si sube de nivel
         int needed = PhoenixPickaxes.getInstance().getConfig().getInt("blocks-per-level", 100) * level;
-        if (xp >= needed) {
+        while (xp >= needed) {
             xp -= needed;
             level++;
             player.sendMessage("§6¡Tu pico ha subido al nivel " + level + "!");
+            needed = PhoenixPickaxes.getInstance().getConfig().getInt("blocks-per-level", 100) * level;
         }
 
-        // Regenerar el item con datos actualizados
+        // Actualizar el pico con datos nuevos
         ItemStack updated = PickaxeManager.createPickaxe(player, blocks, level, xp, 0, 0, skinId);
         player.getInventory().setItemInMainHand(updated);
     }

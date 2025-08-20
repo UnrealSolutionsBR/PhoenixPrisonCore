@@ -4,7 +4,6 @@ import com.phoenixpickaxes.commands.PickaxeCommand;
 import com.phoenixpickaxes.commands.PhoenixCommand;
 import com.phoenixpickaxes.commands.PhoenixTabCompleter;
 import com.phoenixpickaxes.listeners.BlockBreakListener;
-import com.phoenixpickaxes.managers.BlockValueManager;
 import com.phoenixpickaxes.listeners.DropListener;
 import com.phoenixpickaxes.managers.SkinManager;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -38,7 +37,6 @@ public class PhoenixPickaxes extends JavaPlugin {
         // Cargar skins.yml
         loadSkinsConfig();
         SkinManager.loadSkins();
-        BlockValueManager.loadValues();
 
         // Registrar comandos
         getCommand("pickaxe").setExecutor(new PickaxeCommand());

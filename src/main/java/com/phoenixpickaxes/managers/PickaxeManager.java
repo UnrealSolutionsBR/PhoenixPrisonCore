@@ -42,7 +42,7 @@ public class PickaxeManager {
         ItemMeta meta = pickaxe.getItemMeta();
         if (meta == null) return pickaxe;
 
-        // Nombre con bloques rotos
+        // Nombre con bloques rotos (siempre +1 en BlockBreakListener)
         String formattedBlocks = FormatUtils.formatNumber(blocksBroken);
         meta.setDisplayName("§bPico §7[" + formattedBlocks + "]");
 

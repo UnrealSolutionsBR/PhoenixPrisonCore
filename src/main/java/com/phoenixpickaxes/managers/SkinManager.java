@@ -30,7 +30,7 @@ public class SkinManager {
         if (config.isConfigurationSection("skins")) {
             for (String key : config.getConfigurationSection("skins").getKeys(false)) {
                 String display = config.getString("skins." + key + ".display", key);
-                int bonus = config.getInt("skins." + key + ".bonus", 0);
+                double bonus = config.getDouble("skins." + key + ".bonus", 1.0); // ahora double
                 String materialStr = config.getString("skins." + key + ".material", "WOODEN_PICKAXE");
 
                 Material material;
@@ -51,7 +51,7 @@ public class SkinManager {
      * Obtener skin por id
      */
     public static SkinData getSkin(String id) {
-        return skins.getOrDefault(id, new SkinData("wooden", "madera", 0, Material.WOODEN_PICKAXE));
+        return skins.getOrDefault(id, new SkinData("wooden", "Madera", 1.0, Material.WOODEN_PICKAXE));
     }
 
     /**
@@ -64,5 +64,5 @@ public class SkinManager {
     /**
      * Clase para datos de skin
      */
-    public record SkinData(String id, String display, int bonus, Material material) {}
+    public record SkinData(String id, String display, double bonus, Material material) {}
 }
